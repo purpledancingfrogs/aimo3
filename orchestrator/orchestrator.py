@@ -49,3 +49,8 @@ if __name__ == "__main__":
     with open(os.path.join(LOG_DIR, "run.json"), "w") as f:
         json.dump(records, f, indent=2)
     print(json.dumps(records, indent=2))
+# Kaggle AIMO-3 compatibility entrypoint
+def orchestrate(*args, **kwargs):
+    if 'run' in globals() and callable(run):
+        return run(*args, **kwargs)
+    raise RuntimeError('No run() function found for orchestrate()')
