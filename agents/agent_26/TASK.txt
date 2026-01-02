@@ -1,1 +1,11 @@
-agent_26 :: Goldbach frontier verification (range partition, deterministic primes) :: deterministic, replayable, auditable
+﻿TASK: Riemann zeta zero verification
+METHOD: mpmath.zetazero + Turing bounds
+CRITICAL_LINE: Re(s)=1/2
+T_RANGE_START: 50000000
+T_RANGE_END: 52000000
+PRECISION_DIGITS: 80
+OUTPUT: zeros_agent_26.json
+INVARIANTS:
+ - no off-line zeros
+ - zero count matches Turing bound
+ - deterministic execution
